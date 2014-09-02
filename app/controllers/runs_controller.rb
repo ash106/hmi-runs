@@ -1,10 +1,11 @@
 class RunsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_run, only: [:show, :edit, :update, :destroy]
 
   # GET /runs
   # GET /runs.json
   def index
-    @runs = Run.all
+    @runs = current_user.runs
   end
 
   # GET /runs/1
@@ -14,7 +15,7 @@ class RunsController < ApplicationController
 
   # GET /runs/new
   def new
-    @run = Run.new
+    @run = current_user.runs.new
   end
 
   # GET /runs/1/edit
@@ -24,7 +25,7 @@ class RunsController < ApplicationController
   # POST /runs
   # POST /runs.json
   def create
-    @run = Run.new(run_params)
+    @run = current_user.runs.new(run_params)
 
     respond_to do |format|
       if @run.save
@@ -64,7 +65,7 @@ class RunsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_run
-      @run = Run.find(params[:id])
+      @run = current_user.runs.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

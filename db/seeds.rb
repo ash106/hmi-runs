@@ -8,3 +8,8 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+user = User.create!(name: 'Tester', email: 'tester@example.com', password: 'changeme')
+user.runs.create!(date_of: "2014-08-30", distance: 2.5)
+user.runs.create!(date_of: "2014-08-31", distance: 2)
+user.runs.create!(date_of: "2014-09-01", distance: 3.4)
