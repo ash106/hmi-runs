@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Date of:
+  = @run.date_of
+p
+  strong Distance:
+  = @run.distance
+p
+  strong User:
+  = @run.user
+
+= link_to 'Edit', edit_run_path(@run)
+'|
+= link_to 'Back', runs_path

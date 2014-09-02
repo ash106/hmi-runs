@@ -1,0 +1,10 @@
+= simple_form_for(@run) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :date_of
+    = f.input :distance
+    = f.association :user
+
+  .form-actions
+    = f.button :submit
