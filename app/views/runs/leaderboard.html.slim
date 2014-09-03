@@ -1,0 +1,19 @@
+h1 Leaderboard
+
+table.table
+  thead
+    tr
+      th Name
+      th Distance
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user[:name]
+        td 
+          = user[:total_distance]
+          |  miles
+
+br
+
+= link_to 'New Run', new_run_path

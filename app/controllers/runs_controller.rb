@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :leaderboard
   before_action :set_run, only: [:show, :edit, :update, :destroy]
 
   # GET /runs
@@ -60,6 +60,11 @@ class RunsController < ApplicationController
       format.html { redirect_to runs_url, notice: 'Run was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def leaderboard
+    @users = User.all.map { |u| { name: u.name, total_distance: u.runs.sum(:distance) } }
+    @users = @users.sort_by { |u| -u[:total_distance] }
   end
 
   private

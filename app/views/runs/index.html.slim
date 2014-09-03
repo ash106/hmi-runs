@@ -5,7 +5,6 @@ table.table
     tr
       th Date of
       th Distance
-      th User
       th
       th
       th
@@ -17,7 +16,6 @@ table.table
         td 
           = run.distance
           |  miles
-        td = run.user.name
         td = link_to 'Show', run
         td = link_to 'Edit', edit_run_path(run)
         td = link_to 'Destroy', run, data: {:confirm => 'Are you sure?'}, :method => :delete
