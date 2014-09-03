@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'rails_12factor', group: :production
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
