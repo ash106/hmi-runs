@@ -1,4 +1,5 @@
 class WorkoutsController < ApplicationController
+  before_action :authenticate_user!, except: :leaderboard
   before_action :set_workout, only: [:show, :edit, :update, :destroy]
 
   # GET /workouts
