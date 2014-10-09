@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :runs
+  has_many :workouts
 end
