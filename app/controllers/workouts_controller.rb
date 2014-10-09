@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = Workout.all
+    @workouts = current_user.workouts
   end
 
   # GET /workouts/1
@@ -14,7 +14,7 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts/new
   def new
-    @workout = Workout.new
+    @workout = current_user.workouts.new
   end
 
   # GET /workouts/1/edit
@@ -24,7 +24,7 @@ class WorkoutsController < ApplicationController
   # POST /workouts
   # POST /workouts.json
   def create
-    @workout = Workout.new(workout_params)
+    @workout = current_user.workouts.new(workout_params)
 
     respond_to do |format|
       if @workout.save
@@ -59,6 +59,11 @@ class WorkoutsController < ApplicationController
       format.html { redirect_to workouts_url, notice: 'Workout was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def leaderboard
+    @users = User.all.map { |u| { name: u.name, total_time: u.workouts.sum(:length) } }
+    @users = @users.sort_by { |u| -u[:total_time] }
   end
 
   private

@@ -1,19 +1,19 @@
-h1 Run Leaderboard
+h1 Workout Leaderboard
 
 table.table
   thead
     tr
       th Name
-      th Distance
+      th Time
 
   tbody
     - @users.each do |user|
       tr
         td = user[:name]
         td 
-          = user[:total_distance]
-          |  miles
+          = user[:total_time]
+          |  mins
 
 br
 
-= link_to 'New Run', new_run_path
+= link_to 'New Workout', new_workout_path

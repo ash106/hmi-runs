@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   resources :workouts
 
-  root 'runs#leaderboard'
+  root 'workouts#leaderboard'
   devise_for :users
   resources :users
   resources :runs
-  get "/leaderboard", to: "runs#leaderboard", as: :leaderboard
+  get "/workout-leaderboard", to: "workouts#leaderboard", as: :workout_leaderboard
+  get "/run-leaderboard", to: "runs#leaderboard", as: :run_leaderboard
 end

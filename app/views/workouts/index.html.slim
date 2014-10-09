@@ -1,11 +1,10 @@
 h1 Listing workouts
 
-table
+table.table
   thead
     tr
       th Date of
       th Length
-      th User
       th
       th
       th
@@ -14,8 +13,9 @@ table
     - @workouts.each do |workout|
       tr
         td = workout.date_of
-        td = workout.length
-        td = workout.user
+        td 
+          = workout.length
+          |  mins
         td = link_to 'Show', workout
         td = link_to 'Edit', edit_workout_path(workout)
         td = link_to 'Destroy', workout, data: {:confirm => 'Are you sure?'}, :method => :delete
