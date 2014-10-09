@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Date of:
+  = @workout.date_of
+p
+  strong Length:
+  = @workout.length
+p
+  strong User:
+  = @workout.user
+
+= link_to 'Edit', edit_workout_path(@workout)
+'|
+= link_to 'Back', workouts_path
