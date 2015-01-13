@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :workouts
 
-  root 'workouts#leaderboard'
+  root 'runs#leaderboard'
   devise_for :users
   resources :users
   resources :runs
