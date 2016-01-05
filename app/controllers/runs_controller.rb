@@ -5,7 +5,7 @@ class RunsController < ApplicationController
   # GET /runs
   # GET /runs.json
   def index
-    @runs = current_user.runs
+    @runs = current_user.runs.order(date_of: :desc)
   end
 
   # GET /runs/1
