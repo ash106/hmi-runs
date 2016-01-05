@@ -1,7 +1,5 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <li><%= link_to 'New Workout', new_workout_path %></li>
-  <li><%= link_to 'My Workouts', workouts_path %></li>
   <li><%= link_to 'New Run', new_run_path %></li>
   <li><%= link_to 'My Runs', runs_path %></li>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
