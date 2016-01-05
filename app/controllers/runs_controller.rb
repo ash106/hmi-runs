@@ -63,7 +63,7 @@ class RunsController < ApplicationController
   end
 
   def leaderboard
-    @users = User.all.map { |u| { name: u.name, total_distance: u.runs.where("date_of > ?", "2015-01-01").sum(:distance) } }
+    @users = User.all.map { |u| { name: u.name, total_distance: u.runs.where("date_of > ?", "2016-01-01").sum(:distance) } }
     @users = @users.sort_by { |u| -u[:total_distance] }
   end
 
