@@ -88,3 +88,10 @@ section {
 body { padding-top: 91px; }
 
 .alert { margin-bottom: 0; }
+
+// Set colors for collapsed mobile navbar
+@media (max-width: 767px) {
+  body > .navbar-collapse::after { background-color: #8ECFD5; }
+
+  body > .navbar-collapse .nav > li > a { color: #FFF; }
+}
