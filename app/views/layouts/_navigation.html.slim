@@ -13,7 +13,7 @@ nav.navbar.navbar-ct-primary.navbar-fixed-top
         - if user_signed_in?
           li = link_to 'Leaderboard', root_path
           li = link_to 'My Runs', runs_path
-          = link_to 'New Run', new_run_path, class: 'btn btn-primary btn-fill'
+          li = link_to 'New Run', new_run_path, class: 'btn btn-primary btn-fill'
           - if current_user.admin?
             li = link_to 'Users', users_path
       ul.nav.navbar-nav.navbar-right
