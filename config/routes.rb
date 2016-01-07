@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :workouts
 
   root 'runs#leaderboard'
-  devise_for :users, controllers: {sessions: 'sessions'}
+  devise_for :users, controllers: {sessions: 'sessions', registrations: 'registrations'}
   resources :users
   resources :runs
   get "/workout-leaderboard", to: "workouts#leaderboard", as: :workout_leaderboard
