@@ -105,6 +105,7 @@ body {
   color: #fff;
   // max-width: 400px;
   margin-top: 40px;
+  margin-bottom: 40px;
   min-height: 400px;
   padding: 30px;
 }
@@ -126,11 +127,26 @@ body {
   text-align: center;
 }
 
+.signin-card #error_explanation {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.signin-card #error_explanation h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
 @media (max-width: 767px) {
   .signin-card {
     margin-top: 20px;
+    margin-bottom: 20px;
     min-height: 300px;
     padding: 15px;
+  }
+
+  .register-card {
+    padding-bottom: 25px;
   }
 
   .signin-card .title{
@@ -144,5 +160,15 @@ body {
 
   .signin-card .forgot .btn {
     margin-top: 13px;
+  }
+
+  .signin-card #error_explanation {
+    margin-top: 15px;
+    padding: 10px 15px;
+  }
+
+  .signin-card #error_explanation h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 }
