@@ -24,6 +24,7 @@ group :development do
   gem 'foreman'
   gem 'hub', :require=>nil
   gem 'rails_layout'
+  gem 'pry-byebug'
 end
 group :development, :test do
   gem 'pry-rails'
