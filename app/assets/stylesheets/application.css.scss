@@ -98,3 +98,51 @@ body {
 
   body > .navbar-collapse .nav > li > a { color: #FFF; }
 }
+
+.signin-card{
+  background-color: #D7E2E2;
+  border-radius: 8px;
+  color: #fff;
+  // max-width: 400px;
+  margin-top: 40px;
+  min-height: 400px;
+  padding: 30px;
+}
+
+.signin-card label{
+  margin-top: 15px;
+}
+
+.signin-card .title{
+  color: #7A9E9F;
+  text-align: center;
+}
+
+.signin-card .btn{
+  margin-top: 30px;
+}
+
+.signin-card .forgot{
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .signin-card {
+    margin-top: 20px;
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .signin-card .title{
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .signin-card .btn{
+    margin-top: 25px;
+  }
+
+  .signin-card .forgot .btn {
+    margin-top: 13px;
+  }
+}
