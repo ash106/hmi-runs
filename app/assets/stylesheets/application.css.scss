@@ -172,3 +172,13 @@ body {
     margin-bottom: 5px;
   }
 }
+
+@media (max-width: 767px) {
+  h1 {
+    margin-top: 20px;
+  }
+
+  .too-big {
+    font-size: 3.5em;
+  }
+}
