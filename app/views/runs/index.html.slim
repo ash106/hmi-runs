@@ -3,9 +3,8 @@ h1 My Runs
 table.table
   thead
     tr
-      th Date of
+      th Date
       th Distance
-      th
       th
       th
 
@@ -16,9 +15,8 @@ table.table
         td 
           = run.distance
           |  miles
-        td = link_to 'Show', run
         td = link_to 'Edit', edit_run_path(run)
-        td = link_to 'Destroy', run, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Delete', run, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
