@@ -43,8 +43,10 @@ class RunsController < ApplicationController
   # PATCH/PUT /runs/1
   # PATCH/PUT /runs/1.json
   def update
+    formatted_run_params = run_params
+    formatted_run_params[:date_of] = Date.strptime(params[:run][:date_of], '%m/%d/%Y') if !params[:run][:date_of].blank?
     respond_to do |format|
-      if @run.update(run_params)
+      if @run.update(formatted_run_params)
         format.html { redirect_to runs_url, notice: 'Run was successfully updated.' }
         format.json { render :show, status: :ok, location: @run }
       else

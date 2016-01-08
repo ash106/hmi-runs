@@ -16,4 +16,7 @@
         .input-group
           = f.number_field :distance, step: 'any', min: 0, class: 'form-control', autofocus: true, placeholder: '0.00'
           .input-group-addon miles
-        = f.submit 'Add Run', class: 'btn btn-primary btn-block'
+        - if @run.new_record?
+          = f.submit 'Add Run', class: 'btn btn-primary btn-block'
+        - else
+          = f.submit 'Edit Run', class: 'btn btn-primary btn-block'
