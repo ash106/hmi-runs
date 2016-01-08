@@ -42,9 +42,10 @@ $(document).ready(function(){
 
     if($('.datepicker').length != 0){
         $('.datepicker').datepicker({
-             weekStart:1,
-             color: '{color}'
-         });    
+            color: 'blue'
+        }).on('changeDate', function(e) {
+            (e.viewMode == 'days') ? $(this).datepicker('hide') : '';
+        });    
     }
      
       

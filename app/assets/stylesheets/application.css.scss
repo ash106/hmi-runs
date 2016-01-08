@@ -184,3 +184,85 @@ body {
 .new-run-btn {
   margin-bottom: 20px;
 }
+
+.run-card{
+  background-color: #D7E2E2;
+  border-radius: 8px;
+  color: #fff;
+  // max-width: 400px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  // min-height: 400px;
+  padding: 30px;
+}
+
+.run-card label{
+  margin-top: 15px;
+}
+
+.run-card .first-label {
+  margin-top: 0;
+}
+
+// .run-card .title{
+//   color: #7A9E9F;
+//   text-align: center;
+// }
+
+.run-card .btn{
+  margin-top: 30px;
+}
+
+// .run-card .forgot{
+//   text-align: center;
+// }
+
+.run-card #error_explanation {
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.run-card #error_explanation h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+#run_date_of {
+  padding: 7px 18px;
+}
+
+@media (max-width: 767px) {
+  .run-card {
+    margin-top: 0;
+    margin-bottom: 20px;
+    // min-height: 300px;
+    padding: 15px;
+    padding-bottom: 25px;
+  }
+
+  // .register-card {
+  //   padding-bottom: 25px;
+  // }
+
+  // .run-card .title{
+  //   margin-top: 10px;
+  //   margin-bottom: 0;
+  // }
+
+  .run-card .btn{
+    margin-top: 25px;
+  }
+
+  // .run-card .forgot .btn {
+  //   margin-top: 13px;
+  // }
+
+  .run-card #error_explanation {
+    padding: 10px 15px;
+  }
+
+  .run-card #error_explanation h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}

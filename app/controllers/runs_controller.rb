@@ -16,6 +16,7 @@ class RunsController < ApplicationController
   # GET /runs/new
   def new
     @run = current_user.runs.new
+    @run.date_of = Date.today
   end
 
   # GET /runs/1/edit
@@ -26,6 +27,7 @@ class RunsController < ApplicationController
   # POST /runs.json
   def create
     @run = current_user.runs.new(run_params)
+    @run.date_of = Date.strptime(params[:run][:date_of], '%m/%d/%Y') if !params[:run][:date_of].blank?
 
     respond_to do |format|
       if @run.save
