@@ -10,7 +10,7 @@ table.table
   tbody
     - @runs.each do |run|
       tr
-        td = run.date_of
+        td = run.date_of.to_s(:short_year)
         td 
           = run.distance
           |  miles
