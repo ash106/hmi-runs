@@ -16,7 +16,7 @@ class RunsController < ApplicationController
   # GET /runs/new
   def new
     @run = current_user.runs.new
-    @run.date_of = Date.today
+    @run.date_of = Time.zone.today
   end
 
   # GET /runs/1/edit

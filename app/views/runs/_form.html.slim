@@ -11,7 +11,7 @@
               - @run.errors.full_messages.each do |msg|
                 li= msg
         = f.label :date_of, 'Date', class: 'first-label'
-        = f.text_field :date_of, class: 'datepicker form-control', value: !@run.date_of.blank? ? @run.date_of.to_s(:shorthand) : Date.today.to_s(:shorthand), placeholder: '01/01/2016'
+        = f.text_field :date_of, class: 'datepicker form-control', value: !@run.date_of.blank? ? @run.date_of.to_s(:shorthand) : Time.zone.today.to_s(:shorthand), placeholder: '01/01/2016'
         = f.label :distance
         .input-group
           = f.number_field :distance, step: 'any', min: 0, class: 'form-control', autofocus: true, placeholder: '0.00'
