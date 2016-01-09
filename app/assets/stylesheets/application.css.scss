@@ -305,3 +305,30 @@ body {
     width: 24%;
   }
 }
+
+.well {
+  background-color: #D7E2E2;
+  border: 2px solid #7A9E9F;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.well p {
+  margin-bottom: 0;
+}
+
+.cancel-account-card {
+  margin-top: 0;
+  min-height: 150px;
+}
+
+.cancel-account-card p {
+  margin-top: 25px;
+}
+
+@media (max-width: 767px) {
+  .cancel-account-card p {
+    margin-top: 15px;
+  }
+}
