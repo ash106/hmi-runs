@@ -332,3 +332,18 @@ body {
     margin-top: 15px;
   }
 }
+
+.forgot-password-card {
+  min-height: 150px;
+}
+
+.forgot-password-card p {
+  margin-top: 25px;
+}
+
+@media (max-width: 767px) {
+  .forgot-password-card p {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+}
