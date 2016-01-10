@@ -1,25 +1,23 @@
-h1 Listing workouts
+h1.text-center My Workouts
 
-table.table
-  thead
-    tr
-      th Date of
-      th Length
-      th
-      th
-      th
-
-  tbody
-    - @workouts.each do |workout|
-      tr
-        td = workout.date_of
-        td 
-          = workout.length
-          |  mins
-        td = link_to 'Show', workout
-        td = link_to 'Edit', edit_workout_path(workout)
-        td = link_to 'Destroy', workout, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Workout', new_workout_path
+.row
+  .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+    table.table.table-striped
+      thead
+        tr
+          th Date
+          th Time
+          th
+      tbody
+        - @workouts.each do |workout|
+          tr
+            td = workout.date_of.to_s(:short_year)
+            td 
+              = workout.length
+              |  mins
+            td.icon-cell 
+              = link_to(edit_workout_path(workout), class: 'edit-link') do
+                span.glyphicon.glyphicon-edit aria-hidden="true" title="Edit"
+              = link_to(workout, data: {:confirm => 'Are you sure?'}, :method => :delete) do
+                span.glyphicon.glyphicon-remove aria-hidden="true" title="Delete"
+    = link_to 'New Workout', new_workout_path, class: 'btn btn-success new-run-btn'
