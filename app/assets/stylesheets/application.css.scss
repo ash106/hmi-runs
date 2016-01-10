@@ -182,7 +182,13 @@ body {
 }
 
 .new-run-btn {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .new-run-btn {
+    margin-bottom: 20px;
+  }
 }
 
 .run-card{
