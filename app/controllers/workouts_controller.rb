@@ -5,7 +5,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = current_user.workouts
+    @workouts = current_user.workouts.order(date_of: :desc, created_at: :desc)
   end
 
   # GET /workouts/1
@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts/new
   def new
     @workout = current_user.workouts.new
+    @workout.date_of = Time.zone.today
   end
 
   # GET /workouts/1/edit
@@ -26,10 +27,11 @@ class WorkoutsController < ApplicationController
   # POST /workouts.json
   def create
     @workout = current_user.workouts.new(workout_params)
+    @workout.date_of = Date.strptime(params[:workout][:date_of], '%m/%d/%Y') if !params[:workout][:date_of].blank?
 
     respond_to do |format|
       if @workout.save
-        format.html { redirect_to @workout, notice: 'Workout was successfully created.' }
+        format.html { redirect_to workouts_url, notice: 'Workout was successfully created.' }
         format.json { render :show, status: :created, location: @workout }
       else
         format.html { render :new }
@@ -41,9 +43,11 @@ class WorkoutsController < ApplicationController
   # PATCH/PUT /workouts/1
   # PATCH/PUT /workouts/1.json
   def update
+    formatted_workout_params = workout_params
+    formatted_workout_params[:date_of] = Date.strptime(params[:workout][:date_of], '%m/%d/%Y') if !params[:workout][:date_of].blank?
     respond_to do |format|
-      if @workout.update(workout_params)
-        format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
+      if @workout.update(formatted_workout_params)
+        format.html { redirect_to workouts_url, notice: 'Workout was successfully updated.' }
         format.json { render :show, status: :ok, location: @workout }
       else
         format.html { render :edit }
@@ -70,7 +74,7 @@ class WorkoutsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workout
-      @workout = Workout.find(params[:id])
+      @workout = current_user.workouts.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

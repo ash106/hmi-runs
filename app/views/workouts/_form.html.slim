@@ -1,9 +1,22 @@
-= simple_form_for(@workout) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :date_of
-    = f.input :length, label: 'Time'
-
-  .form-actions
-    = f.button :submit
+.row
+  .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-12
+    .run-card
+      = form_for(@workout) do |f|
+        - if @workout.errors.any?
+          #error_explanation
+            h2
+              = pluralize(@workout.errors.count, "error")
+              |  prohibited this workout from being saved:
+            ul
+              - @workout.errors.full_messages.each do |msg|
+                li= msg
+        = f.label :date_of, 'Date', class: 'first-label'
+        = f.text_field :date_of, class: 'datepicker form-control', value: !@workout.date_of.blank? ? @workout.date_of.to_s(:shorthand) : Time.zone.today.to_s(:shorthand), placeholder: '01/01/2016'
+        = f.label :length, 'Time'
+        .input-group
+          = f.number_field :length, step: '1', min: 0, class: 'form-control', autofocus: true, placeholder: '0'
+          .input-group-addon mins
+        - if @workout.new_record?
+          = f.submit 'Add Workout', class: 'btn btn-primary btn-block'
+        - else
+          = f.submit 'Edit Workout', class: 'btn btn-primary btn-block'
