@@ -14,6 +14,14 @@ nav.navbar.navbar-ct-primary.navbar-fixed-top
           li = link_to 'Leaderboard', root_path
           li = link_to 'My Runs', runs_path
           li = link_to 'New Run', new_run_path, class: 'btn btn-primary btn-fill'
+          li.dropdown
+            a.dropdown-toggle data-toggle="dropdown" href="#" 
+              | Workouts 
+              b.caret
+            ul.dropdown-menu
+              li = link_to 'Leaderboard', workout_leaderboard_path
+              li = link_to 'My Workouts', workouts_path
+              li = link_to 'New Workout', new_workout_path
           - if current_user.admin?
             li = link_to 'Users', users_path
       ul.nav.navbar-nav.navbar-right
