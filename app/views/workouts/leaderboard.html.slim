@@ -1,19 +1,19 @@
-h1 Workout Leaderboard
+h1.text-center Workout Leaderboard
 
-table.table
-  thead
-    tr
-      th Name
-      th Time
-
-  tbody
-    - @users.each do |user|
-      tr
-        td = user[:name]
-        td 
-          = user[:total_time]
-          |  mins
-
-br
-
-= link_to 'New Workout', new_workout_path
+.row
+  .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+    table.table.table-striped
+      thead
+        tr
+          th Name
+          th Time
+      tbody
+        - @users.each do |user|
+          tr
+            td = user[:name]
+            td 
+              = user[:total_time]
+              |  mins
+    
+    = link_to 'New Workout', new_workout_path, class: 'btn btn-success new-run-btn'
+    
