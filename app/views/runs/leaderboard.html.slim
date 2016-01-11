@@ -14,7 +14,7 @@ h1.text-center Leaderboard
           tr
             td = user[:name]
             td 
-              = user[:total_distance]
+              = user[:total_distance].to_digits
               |  miles
 
     = link_to 'New Run', new_run_path, class: 'btn btn-success new-run-btn'

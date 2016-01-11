@@ -13,7 +13,7 @@ h1.text-center My Runs
           tr
             td = run.date_of.to_s(:short_year)
             td 
-              = run.distance
+              = run.distance.to_digits
               |  miles
             td.icon-cell 
               = link_to(edit_run_path(run), class: 'edit-link') do
