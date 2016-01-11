@@ -17,6 +17,7 @@ $ ->
   myNewChart = new Chart($("#run_graph_canvas").get(0).getContext("2d")).Bar(data, {
     responsive: true
     scaleShowGridLines: false
+    barValueSpacing: 2
     scaleFontFamily: "'Montserrat', 'Helvetica', 'Arial', sans-serif"
     tooltipFontFamily: "'Montserrat', 'Helvetica', 'Arial', sans-serif"
     tooltipTitleFontFamily: "'Montserrat', 'Helvetica', 'Arial', sans-serif"
