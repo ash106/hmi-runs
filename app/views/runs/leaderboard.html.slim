@@ -2,6 +2,8 @@ h1.text-center Leaderboard
 
 .row
   .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+    div#run_graph
+      canvas#run_graph_canvas data-names="#{@user_names}" data-distances="#{@user_distances}"
     table.table.table-striped
       thead
         tr
