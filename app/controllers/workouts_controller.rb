@@ -67,7 +67,7 @@ class WorkoutsController < ApplicationController
   end
 
   def leaderboard
-    @users = User.all.map { |u| { name: u.name, total_time: u.workouts.sum(:length) } }
+    @users = User.all.map { |u| { name: u.name, total_time: u.workouts.where("date_of >= ?", "2016-01-01").sum(:length) } }
     @users = @users.sort_by { |u| -u[:total_time] }
   end
 
