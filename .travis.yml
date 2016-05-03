@@ -6,9 +6,6 @@ rvm:
   - 2.2.2
 addons:
   postgresql: "9.4"
-  codeclimate:
-    repo_token:
-      secure: "qTyqnVT7AHMSVWNWZzRQsnRM9HO3CtczZK0J/DVGaIv6LISC2imCMBxZonbKKisNrs5wvVXWD2M8epYkgodoGzNVDibkn/JufNVj325WesxBe+I2qcigGUQQrkXPDkbHWxcwlfQKzwZFDW1ucg3E6Ma0i3ZewHJ5BxRh0g/EjUA="
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database hmi_runs_test;' -U postgres
