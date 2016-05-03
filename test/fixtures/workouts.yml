@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  date_of: 2014-10-08
-  length: 1
-  user_id: 
+alex_first_workout:
+  date_of: 2016-01-03
+  length: 15
+  user: alex
 
-two:
-  date_of: 2014-10-08
-  length: 1
-  user_id: 
+alex_second_workout:
+  date_of: 2016-01-07
+  length: 20
+  user: alex
+
+bob_first_workout:
+  date_of: 2016-01-05
+  length: 20
+  user: bob
