@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
+
 ruby '2.2.2'
+
 gem 'rails', '4.1.4'
 gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '>= 1.3.0'
@@ -19,6 +21,8 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'rails_12factor', group: :production
 gem 'chart-js-rails'
+gem 'coveralls', require: false
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -27,6 +31,7 @@ group :development do
   gem 'rails_layout'
   gem 'pry-byebug'
 end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
