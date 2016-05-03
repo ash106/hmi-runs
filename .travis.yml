@@ -7,7 +7,7 @@ rvm:
 addons:
   postgresql: "9.4"
 before_script:
-  - psql -c 'create database hmi-runs_test;' -U postgres
+  - psql -c 'create database hmi_runs_test;' -U postgres
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake test test
