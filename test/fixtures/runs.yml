@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  date_of: 2014-09-02
-  distance: 9.99
-  user_id: 
+alex_first_run:
+  date_of: 2016-01-02
+  distance: 3.2
+  user: alex
 
-two:
-  date_of: 2014-09-02
-  distance: 9.99
-  user_id: 
+alex_second_run:
+  date_of: 2016-01-05
+  distance: 5.5
+  user: alex
+
+bob_first_run:
+  date_of: 2016-01-03
+  distance: 4.1
+  user: bob 
