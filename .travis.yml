@@ -7,6 +7,7 @@ rvm:
 addons:
   postgresql: "9.4"
 before_script:
+  - cp config/database.travis.yml config/database.yml
   - psql -c 'create database hmi_runs_test;' -U postgres
 script:
   - bundle exec rake db:test:prepare
