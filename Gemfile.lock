@@ -230,6 +230,7 @@ DEPENDENCIES
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   simple_form
+  simplecov
   slim-rails
   spring
   uglifier (>= 1.3.0)

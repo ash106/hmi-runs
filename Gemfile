@@ -23,6 +23,7 @@ gem 'rails_12factor', group: :production
 gem 'chart-js-rails'
 gem 'coveralls', require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'simplecov', group: :test, require: false
 
 group :development do
   gem 'better_errors'

@@ -1,8 +1,14 @@
-require "coveralls"
-require "codeclimate-test-reporter"
+require 'simplecov'
+require 'coveralls'
+require 'codeclimate-test-reporter'
 
-Coveralls.wear!('rails')
-CodeClimate::TestReporter.start
+formatters = [SimpleCov::Formatter::HTMLFormatter]
+formatters << Coveralls::SimpleCov::Formatter if ENV['COVERALLS_REPO_TOKEN']
+formatters << CodeClimate::TestReporter::Formatter if ENV['CODECLIMATE_REPO_TOKEN']
+ 
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(*formatters)
+ 
+SimpleCov.start 'rails'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
