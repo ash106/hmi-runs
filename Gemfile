@@ -20,7 +20,7 @@ gem 'slim-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'rails_12factor', group: :production
-gem 'chart-js-rails'
+gem 'chart-js-rails', '0.0.9'
 gem 'coveralls', require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'simplecov', group: :test, require: false
