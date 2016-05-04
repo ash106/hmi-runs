@@ -1,5 +1,8 @@
-Hmi Runs
-================
+# HMI Runs
+
+[![Build Status](https://travis-ci.org/ash106/hmi-runs.svg?branch=master)](https://travis-ci.org/ash106/hmi-runs)
+[![Coverage Status](https://coveralls.io/repos/github/ash106/hmi-runs/badge.svg?branch=master)](https://coveralls.io/github/ash106/hmi-runs?branch=master)
+[![Code Climate](https://codeclimate.com/github/ash106/hmi-runs/badges/gpa.svg)](https://codeclimate.com/github/ash106/hmi-runs)
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
