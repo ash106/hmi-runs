@@ -27,7 +27,7 @@ class RunsController < ApplicationController
   # POST /runs.json
   def create
     @run = current_user.runs.new(run_params)
-    @run.date_of = Date.strptime(params[:run][:date_of], '%m/%d/%Y') if !params[:run][:date_of].blank?
+    @run.date_of = extract_date(params[:run][:date_of])
 
     respond_to do |format|
       if @run.save
@@ -44,7 +44,7 @@ class RunsController < ApplicationController
   # PATCH/PUT /runs/1.json
   def update
     formatted_run_params = run_params
-    formatted_run_params[:date_of] = Date.strptime(params[:run][:date_of], '%m/%d/%Y') if !params[:run][:date_of].blank?
+    formatted_run_params[:date_of] = extract_date(params[:run][:date_of])
     respond_to do |format|
       if @run.update(formatted_run_params)
         format.html { redirect_to runs_url, notice: 'Run was successfully updated.' }

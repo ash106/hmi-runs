@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
   # POST /workouts.json
   def create
     @workout = current_user.workouts.new(workout_params)
-    @workout.date_of = Date.strptime(params[:workout][:date_of], '%m/%d/%Y') if !params[:workout][:date_of].blank?
+    @workout.date_of = extract_date(params[:workout][:date_of])
 
     respond_to do |format|
       if @workout.save
@@ -44,7 +44,7 @@ class WorkoutsController < ApplicationController
   # PATCH/PUT /workouts/1.json
   def update
     formatted_workout_params = workout_params
-    formatted_workout_params[:date_of] = Date.strptime(params[:workout][:date_of], '%m/%d/%Y') if !params[:workout][:date_of].blank?
+    formatted_workout_params[:date_of] = extract_date(params[:workout][:date_of])
     respond_to do |format|
       if @workout.update(formatted_workout_params)
         format.html { redirect_to workouts_url, notice: 'Workout was successfully updated.' }
