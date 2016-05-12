@@ -4,48 +4,13 @@
 [![Coverage Status](https://coveralls.io/repos/github/ash106/hmi-runs/badge.svg?branch=master)](https://coveralls.io/github/ash106/hmi-runs?branch=master)
 [![Code Climate](https://codeclimate.com/github/ash106/hmi-runs/badges/gpa.svg)](https://codeclimate.com/github/ash106/hmi-runs)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+HMI Runs is an exercise tracking web app created for HMI Buying Group. Users enter run and workout data and then track their progress against other employees on the leaderboard.
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+[Demo version](http://hmirunsdemo.herokuapp.com/) - Sign in with **tester@example.com** and **password** to use the demo site.
 
-Problems? Issues?
------------
+Built using:
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.1.2
-- Rails 4.1.4
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+- [Chart.js](http://www.chartjs.org/)
+- [Paper Kit](http://www.creative-tim.com/product/paper-kit)
+- Rails 4.2.6
+- Bootstrap 3.3.6
